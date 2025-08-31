@@ -35,7 +35,7 @@ const services = [
 <section class="relative px-3 md:px-10 overflow-hidden">
   <img
     src={svgPinkStar.src}
-    alt="svg"
+    alt="Pink decorative star"
     width="80"
     class="absolute -right-8 bottom-0"
   />
@@ -43,10 +43,9 @@ const services = [
   <div class="max-w-4xl mx-auto">
     <div class="grid grid-cols-1 md:grid-cols-[70%_30%] py-10 relative">
       <div class="flex items-end">
-        <h1 class="text-4xl">
+        <h2 class="text-4xl">
           Data analysis and machine learning services to boost your business
-        </h1>
-        
+        </h2>
       </div>
     </div>
 
@@ -57,7 +56,7 @@ const services = [
         {
           stats.map((item) => (
             <div class="flex flex-col p-3 md:p-6  md:border-b-2 last:border-none">
-              <h1 class="text-2xl font-medium">{item.value}</h1>
+              <h3 class="text-2xl font-medium">{item.value}</h3>
               <p class="text-sm">{item.name}</p>
             </div>
           ))
@@ -69,7 +68,7 @@ const services = [
         {
           services.map((item) => (
             <div class="flex flex-col gap-2 p-4 md:p-6 border-l-2 border-b-2">
-              <h3 class="text-xl font-medium">{item.name}</h3>
+              <h4 class="text-xl font-medium">{item.name}</h4>
               <p>{item.desc}</p>
             </div>
           ))

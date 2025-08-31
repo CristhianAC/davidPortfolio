@@ -5,7 +5,6 @@ import { author } from "../sample";
 const socials = [
   { icon: "ri-whatsapp-line", link: author.phone },
   { icon: "ri-instagram-line", link: author.linkedin },
-  
 ];
 ---
 
@@ -14,8 +13,16 @@ const socials = [
     class="max-w-3xl mx-auto flex justify-center flex-col gap-5 md:gap-0 md:grid md:grid-cols-3 items-center"
   >
     <div class="flex-1 font-bold">
-      <a href="/" class="flex items-center gap-3 text-xl">
-        <img src={logoStar.src} alt="logo" width="30" />
+      <a
+        href="/"
+        class="flex items-center gap-3 text-xl"
+        aria-label="Go to homepage"
+      >
+        <img
+          src={logoStar.src}
+          alt="{author.nickname} logo, go to homepage"
+          width="30"
+        />
         {author.nickname}
       </a>
     </div>
@@ -32,8 +39,9 @@ const socials = [
             href={item.link}
             target="_blank"
             class="transition-all duration-200 hover:translate-y-[2px]"
+            aria-label={`Go to ${item.icon.replace("ri-", "").replace("-line", "")} profile`}
           >
-            <i class={`${item.icon} text-2xl`} />
+            <i class={`${item.icon} text-2xl`} aria-hidden="true" />
           </a>
         ))
       }
