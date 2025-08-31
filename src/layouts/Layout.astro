@@ -1,34 +1,49 @@
+---
+
+---
+
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Angie Portfolio</title>
-	</head>
-	<body>
-		<slot />
-	</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>David Portfolio</title>
+  </head>
+  <body>
+    <slot />
+    <script>
+      // Asegura que todas las secciones estén ocultas antes de cargar GSAP
+      document.addEventListener("DOMContentLoaded", function () {
+        document.querySelectorAll("section").forEach((section) => {
+          section.classList.add("is-invisible");
+        });
+      });
+    </script>
+    <script type="module" src="/gsap-scroll.js"></script>
+  </body>
 </html>
 
 <style>
+  :root {
+    --main-bg: #fefff0;
+    --blue: #bae6ff;
+    --yellow: #ffdc58;
+  }
 
-:root{
-	--main-bg: #FEFFF0;
-	--blue: #BAE6FF;
-	--yellow: #FFDC58;
-}
-
-html,
-body {
-	margin: 0;
-	width: 100%;
-	height: 100%;
-	background-color: var(--main-bg);
-	font-family: "Space Grotesk", sans-serif;
-	scroll-behavior: smooth;
-}
-
-
+  html,
+  body {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--main-bg);
+    font-family: "Space Grotesk", sans-serif;
+    scroll-behavior: smooth;
+  }
+  .is-invisible {
+    opacity: 0 !important;
+    transform: translateY(60px) !important;
+    transition: none !important;
+  }
 </style>
